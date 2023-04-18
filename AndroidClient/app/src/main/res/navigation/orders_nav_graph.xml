@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/orders_nav_graph"
+    app:startDestination="@id/makeOrderFragment">
+    <fragment
+        android:id="@+id/makeOrderFragment"
+        android:name="com.example.androidclient.orders.MakePaymentFragment"
+        android:label="MakePaymentFragment">
+        <action
+            android:id="@+id/action_makeOrderFragment_to_deliveryDetailsFragment"
+            app:destination="@id/deliveryDetailsFragment" />
+        <action
+            android:id="@+id/action_makeOrderFragment_to_confirmOrderFragment"
+            app:destination="@id/confirmOrderFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/deliveryDetailsFragment"
+        android:name="com.example.androidclient.orders.DeliveryDetailsFragment"
+        android:label="DeliveryDetailsFragment" >
+        <action
+            android:id="@+id/action_deliveryDetailsFragment_to_makeOrderFragment"
+            app:destination="@id/makeOrderFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/confirmOrderFragment"
+        android:name="com.example.androidclient.orders.ConfirmOrderFragment"
+        android:label="fragment_confirm_order"
+        tools:layout="@layout/fragment_confirm_order" >
+        <action
+            android:id="@+id/action_confirmOrderFragment_to_makeOrderFragment"
+            app:destination="@id/makeOrderFragment" />
+    </fragment>
+</navigation>
